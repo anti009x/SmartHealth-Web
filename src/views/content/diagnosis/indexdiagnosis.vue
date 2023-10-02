@@ -75,20 +75,20 @@ export default {
           this.$set(this.diagnosa, item.id, '');
         });
       }).catch(error => {
-        // this.error = "Terjadi kesalahan saat memuat data.";
+        console.log(error);
       });
     },
     submitForm() {
       this.isLoading = true;
       axios.post('diagnosa', {
-        nama: this.nama,
+        user_id: 1,
         diagnosa: Object.values(this.diagnosa)
       }).then(response => {
         this.isLoading = false;
-        // Anda dapat melakukan sesuatu dengan response, misal tampilkan pesan sukses
+        this.response = response('Succes');
       }).catch(error => {
         this.isLoading = false;
-        this.error = "Terjadi kesalahan saat mengirim data.";
+        this.error = "Data Tidak Terkirim";
       });
     },
     getBorderColor(value) {
