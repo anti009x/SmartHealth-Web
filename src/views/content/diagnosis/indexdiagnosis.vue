@@ -1,6 +1,8 @@
 <template>
   <div class="text-center">
     <h2>Diagnosa penyakit</h2>
+
+    <a href="/hasil_diagnosis">Check Hasil Diagnosa</a>
     
     <!-- Error Alert -->
     <div v-if="error" class="alert alert-danger mx-auto" style="max-width: 600px;">{{ error }}</div>
@@ -12,7 +14,7 @@
           <div class="card-body">
             <form @submit.prevent="submitForm">
 
-              <label for=""><b><i class="fas fa-user mr-1"></i> Nama</b></label>
+              <label for="nama"><b><i class="fas fa-user mr-1"></i> Nama</b></label>
               <input type="text" class="form-control mb-3 mx-auto" style="max-width: 300px;" v-model="nama">
 
               <p>Pilih gejala yang sedang dirasakan.</p>
@@ -81,14 +83,16 @@ export default {
     submitForm() {
       this.isLoading = true;
       axios.post('diagnosa', {
-        user_id: 1,
+      nama: '',
         diagnosa: Object.values(this.diagnosa)
       }).then(response => {
         this.isLoading = false;
         this.response = response('Succes');
+        // this.$router.push({ name: 'hasil_riwayat' });
       }).catch(error => {
         this.isLoading = false;
         this.error = "Data Tidak Terkirim";
+        // this.$router.push({ name: 'hasil_riwayat' });
       });
     },
     getBorderColor(value) {

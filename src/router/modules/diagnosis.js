@@ -5,4 +5,10 @@ export default [
         component: ()=>import('@/views/content/diagnosis/indexdiagnosis.vue'),
     },
 
+    {
+        path: '/hasil_diagnosis',
+        name: 'hasil_riwayat',
+        component: ()=>import('@/views/content/diagnosis/hasil_diagnosis.vue'),
+    },
+
 ]
