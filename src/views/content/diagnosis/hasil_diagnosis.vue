@@ -29,7 +29,7 @@
   import { mapActions } from 'vuex';
   
   // Gantilah URL API Anda dengan variabel lingkungan jika memungkinkan
-  const apiUrl = 'http://192.168.100.56:8000/api/riwayat';
+  const apiUrl = 'riwayat';
   
   function konversiArrayPHPkeJS(arrayPHP) {
     try {

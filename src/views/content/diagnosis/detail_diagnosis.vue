@@ -105,7 +105,7 @@
     methods: {
       async fetchDetails() {
         try {
-          const response = await axios.get(`http://192.168.100.56:8000/api/riwayat/${this.id}`);
+          const response = await axios.get(`riwayat/${this.id}`);
           this.gejalaTerpilih = response.data.gejala_terpilih;
           this.hasilDiagnosa = response.data.hasil_diagnosa;
           this.cfMax = response.data.cf_max; // Tambahkan ini
