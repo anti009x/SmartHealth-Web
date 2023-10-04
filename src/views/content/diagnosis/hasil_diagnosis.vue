@@ -1,8 +1,10 @@
 <template>
     <!-- Tampilan tabel data riwayat -->
+    <H1>Hasil Diagnosa</H1>
     <div class="table-responsive">
       <table class="table table-hover border">
         <!-- Header tabel -->
+        
         <thead>
           <th>ID</th>
           <th>Penyakit terdiagnosa</th>

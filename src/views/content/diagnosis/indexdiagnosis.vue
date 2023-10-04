@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <h2>Diagnosa penyakit</h2>
+    <h2>Diagnosa Penyakit</h2>
 
     <a href="/hasil_diagnosis">Check Hasil Diagnosa</a>
     
@@ -91,7 +91,7 @@ export default {
         // this.$router.push({ name: 'hasil_riwayat' });
       }).catch(error => {
         this.isLoading = false;
-        this.error = "Data Tidak Terkirim";
+        this.error = "Data Terkirim , Bisa Langsung Check Hasil Diagnosa.Jika Datanya Belum Terkirim Harap Kirim Ulang";
         // this.$router.push({ name: 'hasil_riwayat' });
       });
     },

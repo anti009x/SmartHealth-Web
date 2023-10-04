@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>Hasil Diagnosa</h1>
+      <h1>Detail Hasil Diagnosa</h1>
       <table class="table table-hover border">
         <thead class="thead-light">
           <tr>
