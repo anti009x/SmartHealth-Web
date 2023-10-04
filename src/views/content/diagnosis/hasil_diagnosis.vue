@@ -1,8 +1,10 @@
 <template>
     <!-- Tampilan tabel data riwayat -->
+    <H1>Hasil Diagnosa</H1>
     <div class="table-responsive">
       <table class="table table-hover border">
         <!-- Header tabel -->
+        
         <thead>
           <th>ID</th>
           <th>Penyakit terdiagnosa</th>
@@ -11,7 +13,7 @@
         </thead>
         <!-- Data tabel -->
         <tbody>
-          <tr v-for="data in results" :key="data.id">
+          <tr v-for="data in sortedResults" :key="data.id">
             <td>{{ data.id }}</td>
             <td>
               <span v-html="getDiagnosedDisease(data)"></span>
@@ -26,9 +28,10 @@
   
   <script>
   import axios from 'axios';
+  import { mapActions } from 'vuex';
   
   // Gantilah URL API Anda dengan variabel lingkungan jika memungkinkan
-  const apiUrl = 'http://192.168.100.56:8000/api/riwayat';
+  const apiUrl = 'riwayat';
   
   function konversiArrayPHPkeJS(arrayPHP) {
     try {
@@ -56,6 +59,11 @@
         results: []
       };
     },
+    computed: {
+    sortedResults() {
+      return this.results.slice().sort((a, b) => a.id - b.id);
+    }
+  },
     mounted() {
       this.fetchData();
     },
@@ -69,8 +77,10 @@
           alert('Terjadi kesalahan saat mengambil data. Silakan coba lagi nanti.');
         }
       },
+     
       viewDetails(id) {
-        console.log('View details for ID:', id);
+        mapActions('diagnosis', ['detail_diagnosis']),
+        this.$router.push({ name: 'detail_diagnosis', params: { id } });
       },
       getDiagnosedDisease(data) {
         if (data.cf_max) {
