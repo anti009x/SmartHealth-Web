@@ -14,8 +14,8 @@
           <div class="card-body">
             <form @submit.prevent="submitForm">
 
-              <label for="nama"><b><i class="fas fa-user mr-1"></i> Nama</b></label>
-              <input type="text" class="form-control mb-3 mx-auto" style="max-width: 300px;" v-model="nama">
+              <!-- <label for="nama"><b><i class="fas fa-user mr-1"></i> Nama</b></label>
+              <input type="text" class="form-control mb-3 mx-auto" style="max-width: 300px;" v-model="nama"> -->
 
               <p>Pilih gejala yang sedang dirasakan.</p>
               <label for=""><b><i class="fas fa-th mr-1"></i> Gejala-gejala</b></label>
@@ -62,7 +62,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      nama: '',
+      // nama: '',
       gejala: [],
       diagnosa: {},
       error: null,
