@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+  <div class="px-8 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
     <div class="container">
       <div class="row gx-lg-5 align-items-center">
         <div class="col-lg-8 mb-5 mb-lg-0">
@@ -8,10 +8,7 @@
             <span class="text-primary">Welcome back, you!</span>
           </h1>
           <p style="color: hsl(217, 10%, 50.8%)">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Eveniet, itaque accusantium odio, soluta, corrupti aliquam
-            quibusdam tempora at cupiditate quis eum maiores libero
-            veritatis? Dicta facilis sint aliquid ipsum atque?
+            
           </p>
         </div>
         <div class="col-lg-4 mb-5 mb-lg-0">
