@@ -3,6 +3,7 @@
 <!-- ini branch ibnu -->
 
 <body>
+
   <div class="stars">
   <div class="star"></div>
   <div class="star"></div>
@@ -15,10 +16,20 @@
   <div class="star"></div>
   <div class="star"></div>
   <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
 </div>
+
   <div class="container py-5 ">
 
     <h2 class="text-center mb-4 fw-semibold">DIAGNOSA PENYAKIT</h2>
+    
+    <audio controls autoplay loop hidden >
+  <source src="../../../assets/audio/andromeda.mp3" type="audio/mpeg">
+  Browsermu tidak mendukung tag audio, upgrade donk!
+</audio>
 
     <div class="text-center mb-3 ">
       <router-link to="/hasil_diagnosis" class="btn btn-primary btn-sm btn-outline-dark  " style="color:white;box-shadow: 2px 2px black; ">Lihat Hasil Diagnosa</router-link>
@@ -66,6 +77,20 @@
 </template>
 
 <script>
+document.addEventListener("click", function() {
+  var audioElement = document.querySelector("audio");
+  
+  if (audioElement) {
+    audioElement.volume = 0.1; //%10
+    
+    audioElement.play().catch(function(error) {
+      console.log("Autoplay gagal: ", error);
+    });
+  } else {
+    console.log("Elemen audio tidak ditemukan");
+  }
+});
+
 import axios from 'axios';
 
 export default {
@@ -97,7 +122,7 @@ export default {
         this.$router.push({ name: 'hasil_riwayat' });
       }).catch(error => {
         this.isLoading = false;
-        this.error = "Data Terkirim , Bisa Langsung Check Hasil Diagnosa.Jika Datanya Belum Terkirim Harap Kirim Ulang";
+        this.error = "Data Tidak Terkirim";
       });
     },
     getBorderColor(value) {
@@ -237,6 +262,99 @@ body {
   --fall-duration: 8.823s;
   --fall-delay: 6.682s;
 }
+
+.star:nth-child(16) {
+  --star-tail-length: 6.68em;
+  --top-offset: 43.86vh;
+  --fall-duration: 6.639s;
+  --fall-delay: 4.562s;
+}
+.star:nth-child(17) {
+  --star-tail-length: 6.49em;
+  --top-offset: 73.76vh;
+  --fall-duration: 6.497s;
+  --fall-delay: 3.131s;
+}
+.star:nth-child(18) {
+  --star-tail-length: 6.91em;
+  --top-offset: 97.99vh;
+  --fall-duration: 7.807s;
+  --fall-delay: 3.074s;
+}
+.star:nth-child(19) {
+  --star-tail-length: 6.36em;
+  --top-offset: 97.14vh;
+  --fall-duration: 8.361s;
+  --fall-delay: 8.271s;
+}
+.star:nth-child(20) {
+  --star-tail-length: 5.37em;
+  --top-offset: 85.9vh;
+  --fall-duration: 7.752s;
+  --fall-delay: 6.571s;
+}
+.star:nth-child(21) {
+  --star-tail-length: 6.77em;
+  --top-offset: 31.94vh;
+  --fall-duration: 6.35s;
+  --fall-delay: 6.445s;
+}
+.star:nth-child(22) {
+  --star-tail-length: 6.01em;
+  --top-offset: 53.69vh;
+  --fall-duration: 6.343s;
+  --fall-delay: 9.861s;
+}
+.star:nth-child(23) {
+  --star-tail-length: 7.06em;
+  --top-offset: 76.6vh;
+  --fall-duration: 6.891s;
+  --fall-delay: 7.142s;
+}
+.star:nth-child(24) {
+  --star-tail-length: 6.06em;
+  --top-offset: 76.67vh;
+  --fall-duration: 7.476s;
+  --fall-delay: 4.102s;
+}
+.star:nth-child(25) {
+  --star-tail-length: 5.79em;
+  --top-offset: 9.2vh;
+  --fall-duration: 8.178s;
+  --fall-delay: 1.331s;
+}
+.star:nth-child(26) {
+  --star-tail-length: 6.88em;
+  --top-offset: 38.43vh;
+  --fall-duration: 10.782s;
+  --fall-delay: 6.22s;
+}
+.star:nth-child(27) {
+  --star-tail-length: 7.21em;
+  --top-offset: 15.46vh;
+  --fall-duration: 8.42s;
+  --fall-delay: 0.182s;
+}
+.star:nth-child(28) {
+  --star-tail-length: 5.77em;
+  --top-offset: 2.67vh;
+  --fall-duration: 6.175s;
+  --fall-delay: 8.863s;
+}
+.star:nth-child(29) {
+  --star-tail-length: 5.02em;
+  --top-offset: 6.41vh;
+  --fall-duration: 11.266s;
+  --fall-delay: 9.323s;
+}
+.star:nth-child(30) {
+  --star-tail-length: 5.94em;
+  --top-offset: 71.91vh;
+  --fall-duration: 11.111s;
+  --fall-delay: 5.935s;
+}
+
+
 .star::before, .star::after {
   position: absolute;
   content: "";
