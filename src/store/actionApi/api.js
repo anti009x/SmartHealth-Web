@@ -6,7 +6,7 @@ import snakecaseKeys from 'snakecase-keys'
 const Api = {
   init() {
     axios.defaults.baseURL =
-      'http://10.0.141.93:8000/api'
+      'http://192.168.100.56:8000/api'
     axios.defaults.headers.post['Content-Type'] = 'multipart/form-data'
     axios.defaults.headers.common.Authorization = 'Bearer ' + Cookies.get('token')
   },
