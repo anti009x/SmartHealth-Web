@@ -1,5 +1,5 @@
 <template>
-<<<<<<< HEAD
+
 
 
 <body>
@@ -22,19 +22,19 @@
 
     <div class="text-center mb-3 ">
       <router-link to="/hasil_diagnosis" class="btn btn-primary btn-sm btn-outline-dark  " style="color:white;box-shadow: 2px 2px black; ">Lihat Hasil Diagnosa</router-link>
-=======
+
   <div class="container py-5">
     <h2 class="text-center mb-4">Diagnosa Penyakit</h2>
 
     <div class="text-center mb-3">
       <router-link to="/hasil_diagnosis" class="btn btn-info">Lihat Hasil Diagnosa</router-link>
->>>>>>> 7c237a928acae26b27f1756e3bc76a0341151cb6
+
     </div>
 
     <!-- Error Alert -->
     <div v-if="error" class="alert alert-danger">{{ error }}</div>
 
-<<<<<<< HEAD
+
     <div class="card ">
       <div class="card-body" >
         <form @submit.prevent="submitForm">
@@ -48,7 +48,7 @@
                         :class="getBorderColor(diagnosa[item.id])">
                   <option :value="null" disabled :selected="!diagnosa[item.id]">Pilihlah Opsi Gejala</option>
                   <option :value="`${item.id}+-1`" >Pasti tidak</option>
-=======
+
     <div class="card">
       <div class="card-body">
         <form @submit.prevent="submitForm">
@@ -62,7 +62,7 @@
                         class="form-control select-control" 
                         :class="getBorderColor(diagnosa[item.id])">
                   <option :value="`${item.id}+-1`">Pasti tidak</option>
->>>>>>> 7c237a928acae26b27f1756e3bc76a0341151cb6
+
                   <option :value="`${item.id}+-0.8`">Hampir pasti tidak</option>
                   <option :value="`${item.id}+-0.6`">Kemungkinan besar tidak</option>
                   <option :value="`${item.id}+-0.4`">Mungkin tidak</option>
@@ -75,7 +75,7 @@
               </div>
             </div>
           </div>
-<<<<<<< HEAD
+
 
           <div class="text-center mt-3">
             <button type="submit" class="btn btn-primary  btn-outline-dark  " style="color:white;box-shadow: 2px 2px black; " :disabled="isLoading">Diagnosa sekarang</button>
@@ -89,7 +89,6 @@
 </body>    
 </template>
 
-=======
 
           <div class="text-center mt-3">
             <button type="submit" class="btn btn-primary" :disabled="isLoading">Diagnosa sekarang</button>
@@ -102,7 +101,7 @@
   </div>
 </template>
 
->>>>>>> 7c237a928acae26b27f1756e3bc76a0341151cb6
+
 <script>
 import axios from 'axios';
 
@@ -149,7 +148,7 @@ export default {
 
 </script>
 
-<<<<<<< HEAD
+
 <style  scoped>
 
   
@@ -332,21 +331,20 @@ body {
   font-family: cursive;
   }
 
-=======
+
 <style scoped>
->>>>>>> 7c237a928acae26b27f1756e3bc76a0341151cb6
+
 .container {
   max-width: 800px;
   margin: auto;
 }
-<<<<<<< HEAD
+
 
 p{
   font-weight: bold;
   font-family:cursive;
 }
-=======
->>>>>>> 7c237a928acae26b27f1756e3bc76a0341151cb6
+
 .select-control:focus {
   outline: none;
   box-shadow: none !important;
