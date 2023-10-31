@@ -1,9 +1,9 @@
 <template>
   <div class="container py-5">
-    <h1 class="text-center mb-4">Hasil Diagnosa</h1>
-    <div class="table-responsive">
-      <table class="table table-hover border">
-        <thead class="thead-dark">
+    <h2 class="text-center mb-4 fw-semibold ">HASIL DIAGNOSA</h2>
+    <div class="table-responsive shadow-lg p-3 mb-5  rounded " style="background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%)">
+      <table class="table table-dark table-hover border">
+        <thead class="thead-dark " style="color: white;">
           <tr>
             <th>ID</th>
             <th>Penyakit Terdiagnosa</th>
@@ -11,12 +11,12 @@
             <th>Aksi</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           <tr v-for="data in sortedResults" :key="data.id">
             <td>{{ data.id }}</td>
             <td><span v-html="getDiagnosedDisease(data)"></span></td>
             <td>{{ formatTanggal(data.created_at) }}</td>
-            <td><button class="btn btn-primary" @click="viewDetails(data.id)">Lihat Detail</button></td>
+            <td ><button class="btn btn-primary" @click="viewDetails(data.id)">Lihat Detail</button></td>
           </tr>
         </tbody>
       </table>
@@ -113,4 +113,19 @@ export default {
   max-width: 800px;
   margin: auto;
 }
+
+h2{
+    text-shadow: 1px 1px #0099ff;
+  color: rgb(0, 0, 0);
+  font-family: cursive;
+  }
+  tbody {
+  color: white;
+}
+
+
+  tbody:hover{
+    color: yellow;
+  }
+
 </style>
