@@ -18,4 +18,4 @@ app.use(iziToast)
 app.use(VueSweetalert2);
 app.mount('#app')
 app.config.globalProperties.$redirect = (page) => { router.push(page) }
-AOS.init();
+AOS.init(); 

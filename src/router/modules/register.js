@@ -1,12 +1,18 @@
-    export default [
-    {
-        path: '/register-konsumen/',
-        name: "RegisterKonsumen",
-        component: () => import('@/views/auth/IndexRegister.vue')
+export default [
+  {
+    path: '/register-member/',
+    name: 'RegisterKonsumen',
+    meta: {
+      title: 'Registrasi Member'
     },
-    {
-        path: '/page-register/',
-        name: "RegisterPerawat",
-        component: () => import('@/views/auth/Index.vue')
-    }
-    ]
+    component: () => import('@/views/auth/IndexRegister.vue')
+  },
+  {
+    path: '/register-tenaga-medis/',
+    name: 'RegisterPerawat',
+    meta: {
+      title: 'Registrasi Tenaga Medis'
+    },
+    component: () => import('@/views/auth/Index.vue')
+  }
+]
