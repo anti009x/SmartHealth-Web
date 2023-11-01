@@ -2,9 +2,9 @@
   <div class="container py-3 mb-5">
     <div class="row justify-content-center">
       <div class="col-lg-6 mt-3">
-        <h4>Welcome <span class="text-primary">back</span></h4>
+        <h4>Halo!</h4>
         <p class="text-secondary">
-          <small> start the adventure </small>
+          <small> Silakan registrasi terlebih dulu </small>
         </p>
         <div class="card shadow">
           <div class="card-header bg-primary text-white">
@@ -15,35 +15,31 @@
               <div class="row mb-3">
                 <div :class="['col-md-6', { 'has-error': submitted && !form.nama }]">
                   <label for="name" class="form-label">Nama</label>
-                  <input placeholder="Nama Lengkap" type="text" id="name" class="form-control" />
+                  <input type="text" id="name" class="form-control" v-model="form.nama" />
                 </div>
                 <div :class="['col-md-6', { 'has-error': submitted && !form.email }]">
                   <label for="email" class="form-label">Email</label>
-                  <input placeholder="Email" type="text" class="form-control" />
+                  <input type="text" class="form-control" v-model="form.email" />
                 </div>
               </div>
               <div class="row mb-3">
                 <div :class="['col-md-6', { 'has-error': submitted && !form.password }]">
                   <label for="name" class="form-label">Password</label>
-                  <input
-                    placeholder="Input Password Minimal 8 Digit"
-                    type="password"
-                    class="form-control"
-                  />
+                  <input type="password" class="form-control" v-model="form.password" />
                 </div>
                 <div :class="['col-md-6', { 'has-error': submitted && !nik }]">
                   <label for="nik" class="form-label">NIK</label>
-                  <input type="text" class="form-control" placeholder="NIK" />
+                  <input type="text" class="form-control" v-model="nik" />
                 </div>
               </div>
               <div class="row mb-3">
                 <div :class="['col-md-6', { 'has-error': submitted && !form.nomor_hp }]">
                   <label for="name" class="form-label">Nomor Hp</label>
-                  <input type="text" class="form-control" placeholder="6281234567890" />
+                  <input type="text" class="form-control" v-model="form.nomor_hp" />
                 </div>
                 <div :class="['col-md-6', { 'has-error': submitted && !form.alamat }]">
                   <label for="alamat" class="form-label">Alamat</label>
-                  <input type="text" class="form-control" placeholder="Alamat" />
+                  <input type="text" class="form-control" v-model="form.alamat" />
                 </div>
               </div>
               <div class="text-center">
@@ -68,13 +64,13 @@ import ButtonComponent from '@/components/partials-component/ButtonComponent.vue
 export default {
   data() {
     return {
-      nik: '223829932',
+      nik: '',
       form: {
-        nama: 'Muhamad Rafli Septian',
-        email: 'rafliseptiannn25@gmail.com',
-        nomor_hp: '081233327788',
-        password: 'password',
-        alamat: 'jakarta',
+        nama: '',
+        email: '',
+        nomor_hp: '',
+        password: '',
+        alamat: '',
         status: ''
       },
       submitted: false
@@ -108,7 +104,7 @@ export default {
             this.$swal({
               icon: 'error',
               title: 'gagal',
-              text: 'semua kolom wajib diisi ya'
+              text: 'Semua kolom wajib diisi'
             })
           } else {
             this.$swal({

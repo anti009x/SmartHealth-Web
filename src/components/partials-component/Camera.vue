@@ -1,26 +1,48 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="camera-box">
-        <div style="display: flex; justify-content: center; background-color: rgb(210, 209, 212)">
-          <i :class="'text-success ' + icon" v-if="isCameraOpen" @click="capture"></i>
+      <div style="padding-top: 70px" class="camera-box">
+        <div class="analisis" v-if="!isCameraOpen">
+          <img src="../../assets/images/face-detection.png" alt="face-detection" />
+          <h5><b>Skin Analyzer</b></h5>
+          <p>
+            Gejala stroke salah satunya ditandai dengan ketidaksimetrisan pada wajah. Analisa
+            sekarang untuk mengenali tanda!
+          </p>
+          <h6>
+            <b><u>Disclaimer</u></b> <br />
+            <span>
+              <i class="fa-solid fa-circle-exclamation"></i> Test ini bukan bertujuan untuk
+              mendiagnosis secara klinik atau memberikan anjuran medis.
+            </span>
+          </h6>
+        </div>
 
-          <div class="camera-button">
-            <button
-              type="button"
-              class="button is-rounded cam-button"
-              style="margin-left: 5%; background-color: rgb(241, 241, 241); border: 0px"
-              @click="toggleCamera"
-            >
-              <span v-if="!isCameraOpen"
-                >Open Camera <br /><i :class="'text-success ' + icon"></i
-              ></span>
-              <span v-else><i class="fa-solid fa-circle-xmark"></i></span>
+        <div style="display: flex">
+          <div v-if="!isCameraOpen" class="d-grid gap-2 col-6 mx-auto">
+            <button type="button" class="btn btn-primary" style="border: 0px" @click="toggleCamera">
+              <span>ASESMEN <i class="fa-solid fa-camera"></i></span>
+            </button>
+          </div>
+          <div
+            v-if="isCameraOpen"
+            class="btn-group mx-auto"
+            role="group"
+            aria-label="Basic example"
+          >
+            <button type="button" class="btn btn-warning">
+              <span><i class="fa-solid fa-camera" v-if="isCameraOpen" @click="capture"></i></span>
+            </button>
+            <button type="button" class="btn btn-danger" @click="toggleCamera">
+              <span v-if="isCameraOpen"><i class="fa-solid fa-circle-xmark"></i></span>
             </button>
           </div>
         </div>
-        <div style="display: flex; height: 600px; justify-content: center">
-          <div v-if="isCameraOpen" class="camera-canvas">
+        <div
+          style="display: flex; height: auto; justify-content: center"
+          class="camera-canvas m-3 p-3"
+        >
+          <div v-if="isCameraOpen">
             <video ref="camera" :width="canvasWidth" :height="canvasHeight" autoplay></video>
             <canvas
               id="photoTaken"
@@ -28,19 +50,24 @@
               :width="canvasWidth"
               :height="canvasHeight"
             ></canvas>
-              <pre v-if="result && percentage">
-    Hasil: {{ result }}
-    Persentase: {{ percentage }}%
-  </pre
-              >
-            
+            <!-- <img
+              src="../../assets/images/facial-paralyse.jpg"
+              style="width: 430px; height: 320px"
+            />
+            <p>Deskripsi : Terindikasi Stroke</p>
+            <p>Kecenderungan : 96%</p> -->
 
+            <pre v-if="result !== null && percentage !== null">
+              Deskripsi: {{ result }}
+              Kecenderungan: {{ percentage }}%
+            </pre>
             <!-- Display the captured image -->
             <!-- <img v-if="isPhotoTaken" :src="capturedImage" alt="Captured Image" /> -->
           </div>
         </div>
       </div>
     </div>
+    <!-- <img v-if="isPhotoTaken" :src="capturedImage" alt="Captured Image" /> -->
   </div>
 </template>
 
@@ -53,6 +80,7 @@ export default {
       type: String
     }
   },
+  // eslint-disable-next-line vue/multi-word-component-names
   name: 'Camera',
 
   data() {
@@ -79,19 +107,15 @@ export default {
         formData.append('file', capturedPhotoFile)
 
         // Make the POST request using Axios
-        let response = await axios.post(
-          'https://api.rafliseptiannn25.web.ti.polindra.ac.id/smarthealth_api/public/api/send-stroke-face ',
-          formData,
-          {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
+        let response = await axios.post('http://127.0.0.1:8000/api/send-stroke-face', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
           }
-        )
+        })
 
         if (response.status === 200) {
           // Handle the successful response
-          console.log(JSON.parse(response.data.response))
+          // console.log(JSON.parse(response.data.response))
 
           let data = JSON.parse(response.data.response)
 
@@ -173,7 +197,7 @@ export default {
         self.isPhotoTaken = true
         self.capturedImage = dataUrl
 
-        console.log(self.capturedImage)
+        // console.log(self.capturedImage)
 
         self.isCameraOpen = true
         self.startCameraStream()
@@ -239,7 +263,36 @@ export default {
   border: 1px dashed #d6d6d6;
   border-radius: 4px;
   padding: 2px;
-  width: 80%;
+  width: 100%;
   min-height: 300px;
+}
+.analisis {
+  padding-top: 30px;
+}
+
+img {
+  width: 197px;
+  height: 197px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+h5,
+h6,
+p {
+  text-align: center;
+  padding-right: 10px;
+}
+.fa-circle-check {
+  font-size: initial;
+  text-transform: none;
+}
+span {
+  font-size: x-small;
+}
+.center {
+  margin: 0;
+  position: relative;
+  left: 50%;
 }
 </style>

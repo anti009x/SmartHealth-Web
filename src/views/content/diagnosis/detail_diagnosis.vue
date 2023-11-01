@@ -1,6 +1,6 @@
 <template>
   <div class="container py-5">
-    <h1 class="text-center mb-4">Detail Hasil Diagnosa</h1>
+    <h2 class="text-center mb-4 fw-semibold">DETAIL DIAGNOSA</h2>
 
     <div class="table-responsive">
       <table class="table table-hover border">
@@ -116,6 +116,12 @@ export default {
 </script>
 
 <style scoped>
+
+h2{
+  text-shadow: 1px 1px #0099ff;
+  color: rgb(0, 0, 0);
+  font-family: cursive;
+}
 
 /* Gaya untuk container */
 .container {
