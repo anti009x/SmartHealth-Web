@@ -3,10 +3,7 @@
   <div class="container py-5 ">
     <h2 class="text-center mb-4 fw-semibold">DIAGNOSA PENYAKIT</h2>
     
-    <audio id="myAudio" controls autoplay loop hidden>
-    <source src="../../../assets/audio/2323dsfsdf.mp3" type="audio/mpeg">
-    Browsermu tidak mendukung tag audio, upgrade donk!
-  </audio>
+
 
     <div class="text-center mb-3 ">
       <router-link to="/hasil_diagnosis" class="btn btn-primary btn-sm btn-outline-dark  " style="color:white;box-shadow: 2px 2px black; ">Lihat Hasil Diagnosa</router-link>
@@ -53,14 +50,7 @@
 </template>
 
 <script>
-//     document.addEventListener("DOMContentLoaded", function() {
-//   var audioElement = document.getElementById("myAudio");
-//   if (audioElement) {
-//     audioElement.volume = 0.1; // Atur volume ke 10%
-//   } else {
-//     console.log("Elemen audio tidak ditemukan");
-//   }
-// });
+
 import axios from 'axios';
 
 export default {

@@ -1,16 +1,10 @@
 <template>
-  <div class="container py-5">
-
-    <h2 class="text-center mb-4 fw-semibold">Hasil Diagnosa</h2>
-    <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
-      <table class="table table-hover border">
-        <thead class="thead-dark">
+<div class="container py-5">
 
     <h2 class="text-center mb-4 fw-semibold ">HASIL DIAGNOSA</h2>
-    <div class="table-responsive shadow-lg p-3 mb-5  rounded " style="background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%)">
-      <table class="table table-dark table-hover border">
-        <thead class="thead-dark " style="color: white;">
-
+    <div class="table-responsive shadow-lg p-3 mb-5  rounded ">
+      <table class="table table-hover border">
+        <thead >
           <tr>
             <th>ID</th>
             <th>Penyakit Terdiagnosa</th>
@@ -132,13 +126,7 @@ h2{
   color: rgb(0, 0, 0);
   font-family: cursive;
   }
-  tbody {
-  color: white;
-}
 
 
-  tbody:hover{
-    color: yellow;
-  }
 
 </style>
