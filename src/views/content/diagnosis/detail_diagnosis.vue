@@ -22,7 +22,7 @@
     </div>
 
     <div class="mt-4" v-for="diagnosa in hasilDiagnosa" :key="diagnosa.kode_penyakit">
-      <div class="card mt-5 border-0 shadow">
+      <div class="card shadow-lg p-3 mb-5 bg-white rounded">
         <div class="card-header bg-primary text-white">
           <h6 class="font-weight-bold mb-0">Tabel Perhitungan Penyakit: {{ diagnosa.nama_penyakit }} ({{ diagnosa.kode_penyakit }})</h6>
         </div>

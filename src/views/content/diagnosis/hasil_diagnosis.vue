@@ -1,7 +1,7 @@
 <template>
   <div class="container py-5">
-    <h1 class="text-center mb-4">Hasil Diagnosa</h1>
-    <div class="table-responsive">
+    <h2 class="text-center mb-4 fw-semibold">Hasil Diagnosa</h2>
+    <div class="table-responsive shadow-lg p-3 mb-5 bg-white rounded">
       <table class="table table-hover border">
         <thead class="thead-dark">
           <tr>
@@ -109,6 +109,12 @@ export default {
 </script>
 
 <style scoped>
+
+h2{
+  text-shadow: 1px 1px #0099ff;
+  color: rgb(0, 0, 0);
+  font-family: cursive;
+}
 .container {
   max-width: 800px;
   margin: auto;
