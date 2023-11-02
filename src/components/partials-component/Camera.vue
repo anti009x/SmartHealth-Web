@@ -107,7 +107,7 @@ export default {
         formData.append('file', capturedPhotoFile)
 
         // Make the POST request using Axios
-        let response = await axios.post('http://127.0.0.1:8000/api/send-stroke-face', formData, {
+        let response = await axios.post('http://192.168.239.116:8000/api/send-stroke-face', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
